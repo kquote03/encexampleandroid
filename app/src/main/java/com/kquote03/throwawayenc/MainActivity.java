@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         CryptoUtils bill = new CryptoUtils(this);
         try {
             IvParameterSpec iv = bill.generateIv();
-            SecretKey key = bill.getKeyFromPassword("ilyreezo","ilysomuch");
+            SecretKey key = bill.getKeyFromPassword("example","isniffsalt");
             FileOutputStream f1 = openFileOutput("messagefile",MODE_PRIVATE);
-            f1.write("I Love you So much Razan, you're all I ever think about.".getBytes());
+            f1.write("Did you know that the witch-woman Jenka once had a brother?".getBytes());
             f1.close();
             bill.printFile("messagefile", bill.getFilestreamLen("messagefile"));
             bill.encrypt(key,"messagefile","messagefile", iv);
